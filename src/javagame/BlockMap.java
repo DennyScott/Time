@@ -23,7 +23,7 @@ public class BlockMap {
 	public int mapHeight; //map height * tile height
 	
 	private int square[] = {1,1,15,1,15,15,1,15}; //square shaped tile
-	public ArrayList<Object> entities;
+	public ArrayList<Block> entities;
  
 	/**
 	 * Constructor. This will assign the passed map as a tiled map, collect
@@ -35,7 +35,7 @@ public class BlockMap {
 	 */
 	public BlockMap(String ref) throws SlickException {
 		
-		entities = new ArrayList<Object>(); //Collect Blocks that need collision detection
+		entities = new ArrayList<Block>(); //Collect Blocks that need collision detection
 		tmap = new TiledMap(ref, "res"); 
 		init();
 	}

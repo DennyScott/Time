@@ -111,8 +111,6 @@ public class Controls{
 		}
 		if (gc.getInput().isKeyDown(Input.KEY_UP)) {			
 			if((playerY - gc.getHeight()/2)  <= 0){
-				System.out.println(playerY);
-				System.out.println(gc.getHeight());
 				playerY -= speed;
 				playerPoly.setY(playerY + cameraY);
 				if (entityCollisionWith()){
