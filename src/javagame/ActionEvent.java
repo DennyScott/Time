@@ -6,8 +6,8 @@ public class ActionEvent extends Event{
 	/*
 	 * Constructor for the ActionEvent class
 	 */
-	public ActionEvent(int eventID, float eventPositionX, float eventPositionY){
-			super(eventID, eventPositionX, eventPositionY);
+	public ActionEvent(int eventID, float eventPositionX, float eventPositionY, Action personalAction){
+			super(eventID, eventPositionX, eventPositionY, personalAction);
 	}
 	
 	/*

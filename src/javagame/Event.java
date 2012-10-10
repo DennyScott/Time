@@ -6,14 +6,16 @@ public class Event {
 	private float eventPositionX;
 	private float eventPositionY;
 	private int eventID;
+	private Action personalAction;
 	
 	/*
 	 * Constructor for Event
 	 */
-	public Event(int eventID, float eventPositionX, float eventPositionY){
+	public Event(int eventID, float eventPositionX, float eventPositionY, Action personalAction){
 		this.eventPositionX = eventPositionX;
 		this.eventPositionY = eventPositionY;
 		this.eventID = eventID;
+		this.personalAction = personalAction;
 	}
 	
 	public float getEventPositionX() {
@@ -33,5 +35,13 @@ public class Event {
 	}
 	public void setEventID(int eventID) {
 		this.eventID = eventID;
+	}
+
+	public Action getPersonalAction() {
+		return personalAction;
+	}
+
+	public void setPersonalAction(Action personalAction) {
+		this.personalAction = personalAction;
 	}
 }
