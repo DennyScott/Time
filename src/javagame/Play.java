@@ -1,5 +1,9 @@
 package javagame;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
@@ -16,7 +20,7 @@ public class Play extends BasicGameState {
 	//Controller for Level
 	private Controls controller;
 	private int state;
-	private Music backgroundMusic;
+	private Sound backgroundMusic;
 
 	
 	//Map
@@ -40,9 +44,18 @@ public class Play extends BasicGameState {
 		gc.setVSync(true);
 		
 		map = new BlockMap("res/levelone.tmx");
-	
-		backgroundMusic = new Music("res/Zelda.ogg");
+		
+		try{
+		InputStream test = new FileInputStream("res/sounds.xml");
+	    ResourceManager.getInstance().loadResources(test);
+		backgroundMusic = ResourceManager.getInstance().getSound("ZELDA_BACKGROUND");
+		}catch(FileNotFoundException e){
+			throw new SlickException("Could not find xml resources", e);
+		}
 
+		//rm.loadSound("ZELDA_BACKGROUND", "res/sounds.xml");
+		
+		
 		float playerX =gc.getWidth()/2;
 		float playerY = gc.getHeight()/2;
 		
